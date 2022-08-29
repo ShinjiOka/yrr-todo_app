@@ -20,7 +20,7 @@ class Api::V1::TodosController < ApplicationController
     
     def update
         todo = Todo.find(params[:id])
-        if todo.update[todo_params]
+        if todo.update(todo_params)
             render json: todo
         else
             render json: todo.errors, status: 422
@@ -43,6 +43,8 @@ class Api::V1::TodosController < ApplicationController
             render json: {error: "Failed to destroy"}, status: 422
         end
     end
+
+    private
     
     def todo_params
         params.require(:todo).permit(:name, :is_completed)
