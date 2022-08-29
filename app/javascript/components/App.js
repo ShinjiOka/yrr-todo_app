@@ -1,5 +1,7 @@
 import React from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
+// import { ToastContainer } from 'react-toastify'
+// import 'react-toastify/dist/ReactToastify.css'
 import styled from 'styled-components'
 import AddTodo from './AddTodo'
 import TodoList from './TodoList'
@@ -70,6 +72,7 @@ function App() {
           <Route path="/todos/:id/edit" component={EditTodo} />
         </Routes>
       </Wrapper>
+      <ToastContainer />
     </>
   )
 }
