@@ -89,7 +89,7 @@ function TodoList() {
   const removeAllTodos = () => {
     const sure = window.confirm('Are you sure?');
     if(sure) {
-      axios.delete('/api/v1/todos/delete_all')
+      axios.delete('/api/v1/todos/destroy_all')
       .then(resp => {
         setTodos([]);
       })
